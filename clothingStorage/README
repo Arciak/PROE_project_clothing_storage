@@ -1,0 +1,9 @@
+Napisany system reprezentuje firmę odzieżową. Firma ta posiada w sowojej ofercie 3 rodzaje ubrań charakteryzujących się różnymi parametrai:
+#1 Koszulka:     kolor, rozmiar, długość, szerokość
+#2 Long-sleeve: kolor, rozmiar, długośc, szerokość, długość rękawa
+#3 Spodnie:      kolor, rozmiar, dłgość nogawki, szerokość
+
+1. System czyta z pliku odzież znajdującą się w sklepie.
+2. Bierzący stan można wyświetlić na ekranie
+3. Z wejścia standardowego bądź innego pliku wczytać innymą odzież znajdująca się w sklepie.
+4. Zapisać do nowego pliku bądź nadpisać poprzedni.
