@@ -8,9 +8,7 @@
 
 #include "place.hpp"
 
-Place::Place(void):fileName_("storage.txt"){
-};
-Place::Place(string fileName) : fileName_(fileName){
+Place::Place(const char *fileName) : fileName_(fileName){
 }
 
 void Place::readFromFile(void){
@@ -37,6 +35,8 @@ void Place::readFromFile(void){
         else if (counter == 8){
             supply_+ Cloth(stringsToStorage_[0],stringsToStorage_[1],stringsToStorage_[2],intsToStorage_[0],intsToStorage_[1],intsToStorage_[2]);
             counter = 1; stringCounter = 0; intCounter = 0;
+            delete [] stringsToStorage_;
+            delete [] intsToStorage_;
             stringsToStorage_ = new string[3];
             intsToStorage_ = new int[3];
         }
@@ -75,6 +75,8 @@ void Place::addElement(void){
     cin>>intsToStorage_[2];
     cout<<endl;
     supply_+Cloth(stringsToStorage_[0], stringsToStorage_[1], stringsToStorage_[2], intsToStorage_[0], intsToStorage_[1], intsToStorage_[2]);
+    delete [] stringsToStorage_;
+    delete [] intsToStorage_;
 }
 
 void Place::removeCloth(void){

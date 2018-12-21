@@ -19,8 +19,7 @@ using namespace std;
 
 class Place {//Aplikacja, klasa komunikujaca sie z uzytkownikiem
 public:
-    Place(void);
-    Place(string fileName);
+    Place(const char *fileName);
     ~Place(void){};
     Place& operator=(const Place& relocatePlace);
     void readFromFile(void);
@@ -29,7 +28,7 @@ public:
     void addElement(void);
     void removeCloth(void);
 private:
-    string fileName_;
+    const char  *fileName_ = "storage.txt";
     Storage supply_;
 };
 
