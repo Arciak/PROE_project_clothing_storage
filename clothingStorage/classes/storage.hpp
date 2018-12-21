@@ -25,8 +25,8 @@ public:
     
 private:
     Cloth* clothes_;
-    unsigned int numberOfClothes_;
-    unsigned int sizeOfStorage_;
+    unsigned int numberOfClothes_ = 0;
+    unsigned int sizeOfStorage_ = 2;
 };
 
 #endif /* storage_hpp */

@@ -11,6 +11,15 @@
 #include "storage.hpp"
 #include "place.hpp"
 
+
+enum operacja {
+    wyswietl = 1,
+    usunElement = 2,
+    dodajElement = 3,
+    zapiszPlik = 4,
+    zamknij = 9
+};
+
 int main(void) {
     string fileName;
     int zz = 0 ;
@@ -18,7 +27,9 @@ int main(void) {
     cout<<"Witamy w naszym magazynie ubran"<<endl;
     cout<<"Wczytaj plik ze stanem magazynu. Podaj nazwie pliku z rozszerzeniem .txt :"<<endl;
     cin>>fileName;
-    Place ourStorage(fileName);
+    char * fileName_ = new char [fileName.length()+1];
+    strcpy (fileName_, fileName.c_str());
+    Place ourStorage(fileName_);
     ourStorage.readFromFile();
     
     while (zz < 25) {
@@ -29,12 +40,25 @@ int main(void) {
         cout<<"4 --> zapisz zmiany do pliku wejsciowego: "<<fileName<<endl;
         cout<<"9 --> zamknij system"<<endl<<endl;
         cin>>choosen;
-        if (choosen == 1)
-            ourStorage.printOnScreen();
-        else if (choosen == 2) ourStorage.removeCloth();
-        else if (choosen == 3) ourStorage.addElement();
-        else if (choosen == 4) ourStorage.saveToFile();
-        else if (choosen == 9) break;
+        switch (choosen) {
+            case wyswietl:
+                ourStorage.printOnScreen();
+                break;
+            case usunElement:
+                ourStorage.removeCloth();
+                break;
+            case dodajElement:
+                ourStorage.addElement();
+                break;
+            case zapiszPlik:
+                ourStorage.saveToFile();
+                break;
+            case zamknij:
+                zz = 24;
+                break;
+            default:
+                break;
+        }
         ++zz;
     }
     return 0;

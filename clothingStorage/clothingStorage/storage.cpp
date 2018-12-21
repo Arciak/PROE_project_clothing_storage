@@ -24,21 +24,19 @@ Storage::~Storage(void){
 }
 
 Storage& Storage::operator+ (const Cloth& addClothe){
-    if (numberOfClothes_<=(sizeOfStorage_-1)) {
+    if (numberOfClothes_<sizeOfStorage_) {
         clothes_[numberOfClothes_] = addClothe;
         numberOfClothes_++;
     }
     else{
-        Cloth* tempClothes = new Cloth[sizeOfStorage_];
-        for (unsigned int ii = 0; ii<sizeOfStorage_; ii++)
-            tempClothes[ii] = clothes_[ii];
-        
+        Cloth* tempClothes = clothes_;//new
         sizeOfStorage_ = sizeOfStorage_+2;
         clothes_ = new Cloth [sizeOfStorage_];
         for (unsigned int ii = 0; ii<numberOfClothes_; ii++)
         clothes_ [ii] = tempClothes[ii];
         clothes_[numberOfClothes_] = addClothe;
         numberOfClothes_++;
+        delete [] tempClothes;
     }
     return *this;
 }
@@ -53,11 +51,9 @@ ostream& operator<<(ostream& out, const Storage& things){
 }
 
 Storage& Storage::removeElement(unsigned int numberOfElementToRemove){
-    Cloth* tempClothes = new Cloth[(numberOfClothes_-1)-numberOfElementToRemove];
-    for (unsigned int ii = numberOfElementToRemove+1; ii<numberOfClothes_; ++ii)
-        tempClothes[ii-(numberOfElementToRemove+1)] = clothes_[ii];
-    for (unsigned int ii = numberOfElementToRemove; ii<(numberOfClothes_-1); ++ii)
-        clothes_[ii] = tempClothes[ii-numberOfElementToRemove];
+    for (unsigned int ii = numberOfElementToRemove; ii<(numberOfClothes_-1); ii++) {
+        clothes_[ii] = clothes_[ii+1];
+    }
     numberOfClothes_--;
     return *this;
 }
