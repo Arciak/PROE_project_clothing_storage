@@ -8,3 +8,5 @@ Lp:  Typ:     	Kolor:  Rozmiar: Szerokosc: Dlugosc: Dlugosc rekawa: Dlugosc noga
 7   Long-sleeve  yellow	 	XS 	 	 212	33			22	 	 	 	---
 8   Spodnie		czarny	 	XXS 	 	 22		---			---	 	 	 	22
 9   Long-sleeve  bialy	 	M 	 	 44	44			44	 	 	 	---
+10   Koszulka   	zielony	 	XXS		 23	12			---	 	 	 	---
+11   Long-sleeve  balack	 	XXL 	 	 33	23			222	 	 	 	---
