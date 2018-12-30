@@ -20,7 +20,7 @@ using namespace std;
 class Place {//Aplikacja, klasa komunikujaca sie z uzytkownikiem
 public:
     Place(const char *fileName);
-    ~Place(void){};
+   // ~Place(void){};
     Place& operator=(const Place& relocatePlace);
     void readFromFile(void);
     void saveToFile(void);
