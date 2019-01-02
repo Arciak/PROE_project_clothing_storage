@@ -11,37 +11,33 @@
 #include "place.hpp"
 #include "helpers.hpp"
 #include "Tshirt.hpp"
-
 int main(void) {
-    string fileName;
     int zz = 0 ;
     int choosen = 0;
     
+    string fileName = "temp.txt";
     welcomeScreen();
- 
-    char * fileName_ = new char [fileName.length()+1];
-    strcpy (fileName_, fileName.c_str());
   
-    auto ceny = make_shared<Storage>();
+    auto ubrania = make_shared<Place>();
     
     while (zz < 100) {
-        menuScreen(fileName);
+        mainMenuScreen();
         cin>>choosen;
         switch (choosen) {
             case plik:
-               
+                //fileName = readFromFile(ubrania);
                 break;
             case wyswietl:
-                //ourStorage.printOnScreen();
+                pokazStanMagazynu(ubrania);
                 break;
             case usunElement:
-                //ourStorage.removeCloth();
+                removeCloth(ubrania);
                 break;
             case dodajElement:
-                dodajUbranie(ceny);
+                dodajUbranie(ubrania);
                 break;
             case zapiszPlik:
-                //ourStorage.saveToFile();
+                saveToFile(ubrania, fileName);
                 break;
             case zamknij:
                 zz = 100;

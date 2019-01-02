@@ -17,7 +17,7 @@ class LongSleeve : public Tshirt{
 private:
     double sleeveLength_ = 0.0;
 public:
-    LongSleeve(const double& price, const string& size, const double& length, const double& width, const double& sleeveLength);
+    LongSleeve(const string& title, const double& price, const string& size, const double& length, const double& width, const double& sleeveLength);
     
     double DlugoscRekawa() override;
 };

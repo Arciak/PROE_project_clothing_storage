@@ -8,7 +8,7 @@
 
 #include "LongSleeve.hpp"
 
-LongSleeve::LongSleeve(const double& price, const string& size, const double& length, const double& width, const double& sleeveLength) : Tshirt(price,size,length,width), sleeveLength_(sleeveLength){};
+LongSleeve::LongSleeve(const string& title, const double& price, const string& size, const double& length, const double& width, const double& sleeveLength) : Tshirt(title, price,size,length,width), sleeveLength_(sleeveLength){};
 
 
 double LongSleeve::DlugoscRekawa(){

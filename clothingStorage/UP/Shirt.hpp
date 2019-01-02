@@ -17,7 +17,7 @@ class Shirt: public LongSleeve{
 private:
     double collarCircuit_ = 0.0;
 public:
-    Shirt(const double& price, const string& size, const double& length, const double& width, const double& sleeveLength,const double& collarCircuit);
+    Shirt(const string& title, const double& price, const string& size, const double& length, const double& width, const double& sleeveLength,const double& collarCircuit);
     double ObwodKolnierza() override;
 };
 

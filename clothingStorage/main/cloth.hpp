@@ -15,6 +15,7 @@ using namespace std;
 
 class Cloth {
 public:
+    virtual string Nazwa() = 0;
     virtual double Cena() = 0;
     virtual string Rozmiar() = 0;
     virtual double* DlugoscSzerokosc() = 0;
