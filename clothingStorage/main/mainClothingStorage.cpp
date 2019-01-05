@@ -25,7 +25,7 @@ int main(void) {
         cin>>choosen;
         switch (choosen) {
             case plik:
-                //fileName = readFromFile(ubrania);
+                fileName = readFromFile(ubrania);
                 break;
             case wyswietl:
                 pokazStanMagazynu(ubrania);

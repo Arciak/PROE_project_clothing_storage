@@ -13,6 +13,7 @@
 #include "storage.hpp"
 #include "place.hpp"
 #include "Shirt.hpp"
+#include <vector>
 
 void welcomeScreen(void){
     cout<<"-------------------------------------------------------------------------------------"<<endl;
@@ -42,11 +43,13 @@ void dodajUbranie(shared_ptr<Place>& sklad){
     
      unsigned int tempChoose = 0;
     
-    cout<<"Wybierz element do dodania"<<endl;
+    cout<<"Wybierz rodzaj ubrania do dodania"<<endl;
     cout<<"1--> Koszulka"<<endl;
     cout<<"2--> Long-Sleeve"<<endl;
     cout<<"3--> Koszula"<<endl;
     cin>>tempChoose;
+        cout<<"Podaj nazwe ubrania: ";
+        cin>>nazwa;
         cout<<"Podaj cene (double): ";
         cin>>cena;
         cout<<"Podaj rozmiar (string): ";
@@ -143,23 +146,49 @@ void removeCloth(shared_ptr<Place>& sklad){
     storage->removeClothe(choosen);
 }
 
-string readFromFile(shared_ptr<Storage>& sklad){
-    string tempName;
-    string word;
+string readFromFile(shared_ptr<Place>& sklad){
+    string fileName_; string word; string line; string delimiter = "\t"; string token;
+    vector<string> divideLine;
+    size_t pos = 0;
     cout<<"Podaj nazwę pliku: ";
-    cin>>tempName;
-    char * fileName= new char [tempName.length()+1];
-    strcpy (fileName, tempName.c_str());
+    cin>>fileName_;
+    char * fileName= new char [fileName_.length()+1];
+    strcpy (fileName, fileName_.c_str());
     fstream file;
     file.open(fileName);
-    file.ignore ( numeric_limits<streamsize>::max(), '\n' );
+    //file.ignore ( numeric_limits<streamsize>::max(), '\n' );
     while (!file.eof()){
-        word.clear();
-        file>>word;
-        cout<<word<<endl;
+        line.clear();
+        divideLine.clear();
+        getline(file,line);
+        if(line.size()<12){
+            word = line;
+            sklad->creatTypeStorage(make_shared<Storage>(), word);
+        }
+        else if (line.size()>=12){
+            while ((pos = line.find(delimiter)) != string::npos) {
+                token = line.substr(0, pos);
+                divideLine.push_back(token);
+                line.erase(0, pos + delimiter.length());
+            }
+            token = line.substr(0, pos);
+            divideLine.push_back(token);
+            if(word=="Koszulka"){
+                auto ciuszek = make_shared<Tshirt>(divideLine[1], atoi(divideLine[2].c_str()), divideLine[3], atoi(divideLine[4].c_str()), atoi(divideLine[5].c_str()));
+                auto zbior = sklad->find(word);
+                zbior->addCloth(ciuszek);}
+            else if (word == "Long-Sleeve"){
+                auto ciuszek = make_shared<LongSleeve>(divideLine[1], atoi(divideLine[2].c_str()), divideLine[3], atoi(divideLine[4].c_str()), atoi(divideLine[5].c_str()), atoi(divideLine[6].c_str()));
+                auto zbior = sklad->find(word);
+                zbior->addCloth(ciuszek);}
+            else if (word == "Koszula"){
+                auto ciuszek = make_shared<Shirt>(divideLine[1], atoi(divideLine[2].c_str()), divideLine[3], atoi(divideLine[4].c_str()), atoi(divideLine[5].c_str()), atoi(divideLine[6].c_str()), atoi(divideLine[7].c_str()));
+                auto zbior = sklad->find(word);
+                zbior->addCloth(ciuszek);}
+            }
     }
 
-    return tempName;
+    return fileName_;
 }
 
 enum operacja {

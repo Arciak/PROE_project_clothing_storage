@@ -18,7 +18,7 @@ shared_ptr<Storage>& Place::find(const string name){
 
 ostream& operator<<(ostream& out,const shared_ptr<Place>& place){
     for (auto itr = place->types_.begin(); itr != place->types_.end(); ++itr) {
-        out << itr->first<<": "<<endl<<itr->second;
+        out << itr->first<<endl<<itr->second;
     }
     return out;
 }
