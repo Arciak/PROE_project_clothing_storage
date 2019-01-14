@@ -14,18 +14,24 @@
 int main(void) {
     int zz = 0 ;
     int choosen = 0;
+    bool valid = false;
     
     string fileName = "temp.txt";
     welcomeScreen();
   
     auto ubrania = make_shared<Place>();
     
-    while (zz < 100) {
+    while (!valid) {
         mainMenuScreen();
         cin>>choosen;
         switch (choosen) {
             case plik:
-                fileName = readFromFile(ubrania);
+                try{
+                    fileName = readFromFile(ubrania);
+                }
+                catch(const file_exception& ee){
+                    cout<<ee.what()<<"  -----> Sproboj wczytac inny plik"<<endl;
+                }
                 break;
             case wyswietl:
                 pokazStanMagazynu(ubrania);
@@ -37,10 +43,15 @@ int main(void) {
                 dodajUbranie(ubrania);
                 break;
             case zapiszPlik:
+                try{
                 saveToFile(ubrania, fileName);
+                }
+                catch(const file_exception& ee){
+                    cout<<ee.what()<<endl;
+                }
                 break;
             case zamknij:
-                zz = 100;
+                valid = true;
                 break;
             default:
                 break;

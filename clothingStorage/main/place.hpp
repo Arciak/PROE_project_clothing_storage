@@ -15,6 +15,7 @@
 #include <fstream>
 #include "cloth.hpp"
 #include "storage.hpp"
+#include "wyjatki.hpp"
 using namespace std;
 
 class Place {//Aplikacja, klasa komunikujaca sie z uzytkownikiem
@@ -26,7 +27,7 @@ public:
     shared_ptr<Storage>& find(const string name);
     friend ostream& operator<<(ostream& out, const shared_ptr<Place>& place);
     void pokazTypyUbranWMagazynie(void);
-    string pobierzNazwe(unsigned int element);
+    string pobierzTypUbrania(unsigned int element);
 };
 
 #endif /* place_hpp */

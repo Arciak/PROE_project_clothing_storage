@@ -17,6 +17,7 @@ shared_ptr<Storage>& Place::find(const string name){
 }
 
 ostream& operator<<(ostream& out,const shared_ptr<Place>& place){
+    out<<"Nr\tNazwa:\tCena:\tRozmiar:\tDlugosc:\tSzerokosc:\tRekaw:\tKolnierz:"<<endl;
     for (auto itr = place->types_.begin(); itr != place->types_.end(); ++itr) {
         out << itr->first<<endl<<itr->second;
     }
@@ -31,7 +32,7 @@ void Place::pokazTypyUbranWMagazynie(){
     }
 }
 
-string Place::pobierzNazwe(unsigned int element){
+string Place::pobierzTypUbrania(unsigned int element){
     unsigned int counter = 1;
     string type = "Na/Na";
     for (auto itr = types_.begin(); itr != types_.end(); ++itr) {
@@ -41,5 +42,7 @@ string Place::pobierzNazwe(unsigned int element){
         }
         else counter++;
     }
+    if(type == "Na/Na")
+        throw choosen_exception();
     return type;
 }

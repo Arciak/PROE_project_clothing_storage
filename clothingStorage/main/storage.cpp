@@ -13,7 +13,6 @@ using namespace std;
 void Storage::addCloth(const shared_ptr<Cloth>& ubranie){
     clothes_.insert(make_pair(clothNumber_, ubranie));
     clothNumber_++;
-    cout <<endl;
 }
 
 void Storage::removeClothe(unsigned int id){
