@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A83642F21D64F6400CF84EC /* Tshirt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A83642D21D64F6400CF84EC /* Tshirt.cpp */; };
+		3A83643A21D6501C00CF84EC /* Shirt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A83643821D6501C00CF84EC /* Shirt.cpp */; };
+		3A83643F21D6772100CF84EC /* LongSleeve.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A83643D21D6772100CF84EC /* LongSleeve.cpp */; };
 		3A8B2CAE21A02B7700A3BD26 /* mainClothingStorage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A8B2CAD21A02B7700A3BD26 /* mainClothingStorage.cpp */; };
-		3A8B2CB921A0C62600A3BD26 /* cloth.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A8B2CB721A0C62600A3BD26 /* cloth.cpp */; };
 		3A8B2CBC21A0C9B200A3BD26 /* storage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A8B2CBA21A0C9B200A3BD26 /* storage.cpp */; };
 		3A8B2CBF21A0E15A00A3BD26 /* place.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A8B2CBD21A0E15A00A3BD26 /* place.cpp */; };
 /* End PBXBuildFile section */
@@ -26,15 +28,22 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3A83642D21D64F6400CF84EC /* Tshirt.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Tshirt.cpp; sourceTree = "<group>"; };
+		3A83642E21D64F6400CF84EC /* Tshirt.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Tshirt.hpp; sourceTree = "<group>"; };
+		3A83643821D6501C00CF84EC /* Shirt.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Shirt.cpp; sourceTree = "<group>"; };
+		3A83643921D6501C00CF84EC /* Shirt.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Shirt.hpp; sourceTree = "<group>"; };
+		3A83643D21D6772100CF84EC /* LongSleeve.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LongSleeve.cpp; sourceTree = "<group>"; };
+		3A83643E21D6772100CF84EC /* LongSleeve.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = LongSleeve.hpp; sourceTree = "<group>"; };
+		3A83644921D7F1FA00CF84EC /* helpers.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = helpers.hpp; sourceTree = "<group>"; };
 		3A8B2CAA21A02B7700A3BD26 /* clothingStorage */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = clothingStorage; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A8B2CAD21A02B7700A3BD26 /* mainClothingStorage.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = mainClothingStorage.cpp; sourceTree = "<group>"; };
-		3A8B2CB721A0C62600A3BD26 /* cloth.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = cloth.cpp; sourceTree = "<group>"; };
 		3A8B2CB821A0C62600A3BD26 /* cloth.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = cloth.hpp; sourceTree = "<group>"; };
 		3A8B2CBA21A0C9B200A3BD26 /* storage.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = storage.cpp; sourceTree = "<group>"; };
 		3A8B2CBB21A0C9B200A3BD26 /* storage.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = storage.hpp; sourceTree = "<group>"; };
 		3A8B2CBD21A0E15A00A3BD26 /* place.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = place.cpp; sourceTree = "<group>"; };
 		3A8B2CBE21A0E15A00A3BD26 /* place.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = place.hpp; sourceTree = "<group>"; };
 		3A8B2CC121A0E5E500A3BD26 /* README */ = {isa = PBXFileReference; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		3A92688721ECCF0000C9CFE1 /* wyjatki.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = wyjatki.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,12 +57,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A83643021D64F7500CF84EC /* UP */ = {
+			isa = PBXGroup;
+			children = (
+				3A83642E21D64F6400CF84EC /* Tshirt.hpp */,
+				3A83642D21D64F6400CF84EC /* Tshirt.cpp */,
+				3A83643E21D6772100CF84EC /* LongSleeve.hpp */,
+				3A83643D21D6772100CF84EC /* LongSleeve.cpp */,
+				3A83643921D6501C00CF84EC /* Shirt.hpp */,
+				3A83643821D6501C00CF84EC /* Shirt.cpp */,
+			);
+			path = UP;
+			sourceTree = "<group>";
+		};
+		3A83643B21D6503200CF84EC /* main */ = {
+			isa = PBXGroup;
+			children = (
+				3A8B2CAD21A02B7700A3BD26 /* mainClothingStorage.cpp */,
+				3A8B2CB821A0C62600A3BD26 /* cloth.hpp */,
+				3A8B2CBE21A0E15A00A3BD26 /* place.hpp */,
+				3A8B2CBD21A0E15A00A3BD26 /* place.cpp */,
+				3A8B2CBB21A0C9B200A3BD26 /* storage.hpp */,
+				3A8B2CBA21A0C9B200A3BD26 /* storage.cpp */,
+				3A83644921D7F1FA00CF84EC /* helpers.hpp */,
+				3A92688721ECCF0000C9CFE1 /* wyjatki.hpp */,
+			);
+			path = main;
+			sourceTree = "<group>";
+		};
 		3A8B2CA121A02B7700A3BD26 = {
 			isa = PBXGroup;
 			children = (
 				3A8B2CC121A0E5E500A3BD26 /* README */,
-				3A8B2CB421A02C3100A3BD26 /* classes */,
-				3A8B2CAC21A02B7700A3BD26 /* clothingStorage */,
+				3A83643021D64F7500CF84EC /* UP */,
+				3A83643B21D6503200CF84EC /* main */,
 				3A8B2CAB21A02B7700A3BD26 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -64,27 +101,6 @@
 				3A8B2CAA21A02B7700A3BD26 /* clothingStorage */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		3A8B2CAC21A02B7700A3BD26 /* clothingStorage */ = {
-			isa = PBXGroup;
-			children = (
-				3A8B2CAD21A02B7700A3BD26 /* mainClothingStorage.cpp */,
-				3A8B2CB721A0C62600A3BD26 /* cloth.cpp */,
-				3A8B2CBA21A0C9B200A3BD26 /* storage.cpp */,
-				3A8B2CBD21A0E15A00A3BD26 /* place.cpp */,
-			);
-			path = clothingStorage;
-			sourceTree = "<group>";
-		};
-		3A8B2CB421A02C3100A3BD26 /* classes */ = {
-			isa = PBXGroup;
-			children = (
-				3A8B2CB821A0C62600A3BD26 /* cloth.hpp */,
-				3A8B2CBB21A0C9B200A3BD26 /* storage.hpp */,
-				3A8B2CBE21A0E15A00A3BD26 /* place.hpp */,
-			);
-			path = classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,7 +160,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A8B2CBC21A0C9B200A3BD26 /* storage.cpp in Sources */,
-				3A8B2CB921A0C62600A3BD26 /* cloth.cpp in Sources */,
+				3A83643A21D6501C00CF84EC /* Shirt.cpp in Sources */,
+				3A83643F21D6772100CF84EC /* LongSleeve.cpp in Sources */,
+				3A83642F21D64F6400CF84EC /* Tshirt.cpp in Sources */,
 				3A8B2CAE21A02B7700A3BD26 /* mainClothingStorage.cpp in Sources */,
 				3A8B2CBF21A0E15A00A3BD26 /* place.cpp in Sources */,
 			);
